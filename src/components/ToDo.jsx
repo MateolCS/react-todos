@@ -1,10 +1,10 @@
 import React from "react";
 import { StyledToDo } from "../styles/ToDo.styled";
-const ToDo = ({ task, handleTaskCompletion }) => {
+const ToDo = ({ task, handleTaskStatusChange }) => {
   return (
     <StyledToDo>
-      <input type="checkbox" onChange={() => handleTaskCompletion(task.id)} />
-      <p>{task.text}</p>
+      <input type="checkbox" onChange={() => handleTaskStatusChange(task.id)} />
+      <p>{task.name}</p>
     </StyledToDo>
   );
 };
