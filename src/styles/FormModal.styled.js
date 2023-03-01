@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
 export const StyledFormModal = styled.div`
-  max-width: 700px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 300px;
   background-color: #e96479;
   border-radius: 10px;
   border: 2px solid #4d455d;
+  margin-top: auto;
 
   h2 {
     text-align: center;
     font-size: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    width: 700px;
   }
 `;
 

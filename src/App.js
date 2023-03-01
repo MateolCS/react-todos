@@ -2,17 +2,14 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FormModal from "./components/FormModal";
-import {
-  StyledMain,
-  Wrapper,
-  StyledOpenModalButton,
-} from "./styles/App.styled";
+import ToDoContainer from "./components/ToDoContainer";
+import { StyledMain, Wrapper, StyledTaskGroup } from "./styles/App.styled";
 const App = () => {
-  const [showModal, setShowModal] = useState(false);
   const [tasks, setTasks] = useState([]);
 
   const handleAddToDo = (newTask) => {
     setTasks([...tasks, newTask]);
+    console.log(tasks);
   };
 
   const handleTaskUpdate = (id) => {
@@ -30,18 +27,19 @@ const App = () => {
       <Header />
       <StyledMain>
         <Wrapper>
-          {showModal && (
-            <FormModal
-              showModal={showModal}
-              AddTask={handleAddToDo}
-              hideModal={setShowModal}
+          <StyledTaskGroup>
+            <ToDoContainer
+              title={"To Do"}
+              tasksList={tasks.filter((task) => task.isCompleted !== true)}
+              handleTaskStatusChange={handleTaskUpdate}
             />
-          )}
-          <StyledOpenModalButton
-            onClick={() => {
-              setShowModal(true);
-            }}
-          />
+            <ToDoContainer
+              title={"Completed"}
+              tasksList={tasks.filter((task) => task.isCompleted === true)}
+              handleTaskStatusChange={handleTaskUpdate}
+            />
+          </StyledTaskGroup>
+          <FormModal AddTask={handleAddToDo} />
         </Wrapper>
       </StyledMain>
       <Footer />

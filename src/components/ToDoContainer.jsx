@@ -1,10 +1,11 @@
 import React from "react";
 import ToDo from "./ToDo";
 import { StyledToDoContainer } from "../styles/ToDoContainer.styled";
-const ToDoContainer = ({ doDoList, handleTaskStatusChange }) => {
+const ToDoContainer = ({ tasksList, handleTaskStatusChange, title }) => {
   return (
     <StyledToDoContainer>
-      {doDoList.map((task) => {
+      <h2>{title}</h2>
+      {tasksList.map((task) => {
         return (
           <ToDo
             key={task.id}

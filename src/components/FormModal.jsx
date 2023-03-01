@@ -5,7 +5,7 @@ import {
   StyledButton,
   StyledInput,
 } from "../styles/FormModal.styled";
-const FormModal = ({ AddTask, hideModal }) => {
+const FormModal = ({ AddTask }) => {
   const [taskName, setTaskName] = useState("");
 
   const handleSubmit = (e) => {
@@ -19,7 +19,6 @@ const FormModal = ({ AddTask, hideModal }) => {
 
     AddTask(task);
     setTaskName("");
-    hideModal(false);
   };
 
   return (

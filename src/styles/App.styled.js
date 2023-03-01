@@ -1,21 +1,32 @@
 import styled from "styled-components";
-import { AiFillFolderAdd } from "react-icons/ai";
+
 export const StyledMain = styled.main`
   width: 100%;
   align-self: stretch;
   height: 100%;
+  display: flex;
 `;
 
 export const Wrapper = styled.div`
   width: 90%;
   margin: 0 auto;
   padding: 1rem 0;
-  height: 100%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const StyledOpenModalButton = styled(AiFillFolderAdd)`
-  color: #e96479;
-  font-size: 3rem;
-  cursor: pointer;
-  align-self: center;
+export const StyledTaskGroup = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
