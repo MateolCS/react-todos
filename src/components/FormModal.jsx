@@ -14,7 +14,7 @@ const FormModal = ({ AddTask }) => {
     const task = {
       id: Math.floor(Math.random() * 10000) + 1,
       name: taskName,
-      completed: false,
+      isCompleted: false,
     };
 
     AddTask(task);

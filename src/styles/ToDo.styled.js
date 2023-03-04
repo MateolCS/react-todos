@@ -6,9 +6,11 @@ export const StyledToDo = styled.div`
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
-  border: 1px solid #4d455d;
+  border: 2px solid #804674;
   border-radius: 10px;
   padding: 0.5rem;
+  background-color: ${({ isCompleted }) =>
+    isCompleted ? "#E96479" : "#7db9b6"};
 `;
 
 export const StyledToDoTitle = styled.h3`

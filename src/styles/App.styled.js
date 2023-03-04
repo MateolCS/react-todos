@@ -25,6 +25,8 @@ export const StyledTaskGroup = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 4rem;
+  height: 100%;
+  justify-content: center;
 
   @media (min-width: 768px) {
     flex-direction: row;
